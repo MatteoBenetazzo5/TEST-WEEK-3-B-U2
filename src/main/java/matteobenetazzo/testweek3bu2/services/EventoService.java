@@ -14,7 +14,7 @@ public class EventoService {
 
     private final EventoRepository eventoRepository;
 
-    // creo/salvo un evento
+    // salvo un evento
     public Evento salvaEvento(Evento evento) {
         return eventoRepository.save(evento);
     }

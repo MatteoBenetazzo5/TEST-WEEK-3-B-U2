@@ -23,12 +23,10 @@ public class Prenotazione {
     @Column(name = "data_prenotazione", nullable = false)
     private LocalDateTime dataPrenotazione;
 
-    // relazione con utente
     @ManyToOne
     @JoinColumn(name = "utenti_id", nullable = false)
     private Utente utente;
-
-    // relazione con evento
+    
     @ManyToOne
     @JoinColumn(name = "eventi_id", nullable = false)
     private Evento evento;

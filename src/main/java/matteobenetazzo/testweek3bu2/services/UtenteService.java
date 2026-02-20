@@ -2,6 +2,7 @@ package matteobenetazzo.testweek3bu2.services;
 
 import lombok.RequiredArgsConstructor;
 import matteobenetazzo.testweek3bu2.entities.Utente;
+import matteobenetazzo.testweek3bu2.exceptions.NotFoundException;
 import matteobenetazzo.testweek3bu2.repositories.UtenteRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,10 @@ public class UtenteService {
     public Utente trovaPerId(UUID id) {
         return utenteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Utente non trovato"));
+    }
+
+    public Utente trovaPerEmail(String email) {
+        return utenteRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Utente non trovato"));
     }
 }

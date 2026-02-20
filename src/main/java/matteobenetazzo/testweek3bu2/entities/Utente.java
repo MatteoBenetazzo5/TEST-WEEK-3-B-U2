@@ -15,7 +15,6 @@ import java.util.UUID;
 @ToString
 public class Utente {
 
-    // id univoco dell'utente
     @Id
     @GeneratedValue
     @Column(name = "id_utente")
@@ -27,20 +26,16 @@ public class Utente {
     @Column(nullable = false)
     private String cognome;
 
-    // email per il login
     @Column(nullable = false, unique = true)
     private String email;
 
-    // password criptata
     @Column(nullable = false)
     private String password;
 
-    // enum salvato come STRINGA nel DB
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RuoloUtente ruolo;
 
-    // data creazione utente
     @Column(name = "data_creazione", nullable = false)
     private LocalDateTime dataCreazione;
 
